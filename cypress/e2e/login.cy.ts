@@ -10,7 +10,7 @@ describe('Login with TypeScript', () => {
   });
 
   it('should login successfully', function () {
-    loginPage.login(this.users.validUser.email, this.users.validUser.password);
+    cy.login(this.users.validUser.email, this.users.validUser.password);
     dashboardPage.verifyLoginSuccess();
   });
 });

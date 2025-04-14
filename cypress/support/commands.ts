@@ -4,3 +4,13 @@ Cypress.Commands.add('login', (email: string, password: string) => {
   cy.get('input[formcontrolname=password]').type(password);
   cy.get('button[type=submit]').click();
 });
+
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      login(email: string, password: string): Chainable<void>;
+    }
+  }
+}
+
+export { };
